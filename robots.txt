@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://faisal-qureshi.github.io/faisalqureshi.com/sitemap.xml
