@@ -9,7 +9,7 @@ description: Faisal Qureshi is a Pakistani journalist, TV host and tech entrepre
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-14T10:12:04.990Z
 tags:
   - fq/about-me
   - fq/information
@@ -32,7 +32,7 @@ This "digital garden" or "mindmap", is hopefully my returning offer to this life
 
 ## Still Curious?
 
-You can read a bit more about my journey on the [About Me](me/whoami.md) page.
+You can read a bit more about my journey on the [About Me](me/about), and my [Who Am I](me/whoami.md) pages.
 
 ## Contact Information
 

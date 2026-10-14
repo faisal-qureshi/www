@@ -5,7 +5,7 @@ title: Settings
 description: "Choose how this site looks: pick your own light and dark theme."
 lang: en
 created: 2026-10-14
-modified: 2026-10-14
+modified: 2026-10-14T10:12:04.990Z
 cssclasses:
   - settings-page
 ---

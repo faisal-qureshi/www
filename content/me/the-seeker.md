@@ -6,7 +6,7 @@ description: Faisal Qureshi on choosing Islam through exploration, learning as t
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-14T10:12:04.997Z
 tags:
   - about
   - me

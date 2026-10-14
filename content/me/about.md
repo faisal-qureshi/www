@@ -6,7 +6,7 @@ description: Who is Faisal Qureshi? An engineer who never engineered, a tech ent
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-14T10:12:04.998Z
 tags:
   - about
   - me
