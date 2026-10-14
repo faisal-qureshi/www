@@ -5,7 +5,9 @@ import { rebaseLinks, settingsLinks } from "./CustomHeader"
 
 export default (() => {
   function CustomFooter(props: QuartzComponentProps) {
+    // fq-global is tracked in git (the Obsidian syncer only publishes notes); content/ is a fallback
     const candidates = [
+      path.join(process.cwd(), "fq-global", "_footer.html"),
       path.join(process.cwd(), "content", "_footer.html"),
       path.join(process.cwd(), "content", "footer.html"),
       path.join(process.cwd(), "content", "_footer.md"),

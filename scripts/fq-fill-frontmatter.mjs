@@ -83,7 +83,6 @@ for (const file of walk(vault)) {
       if (key === "draft") l = ["draft: false"]
       if (key === "title") l = [`title: "${title}"`]
       if (key === "created") l = [`created: ${section === "microblog" ? st.birthtime.toISOString().replace(/\.\d+Z$/, "Z") : dateOnly(st.birthtime)}`]
-      if (key === "modified") l = [`modified: ${dateOnly(st.mtime)}`]
       adds.push(...l)
     }
     if (adds.length === 0) continue

@@ -562,7 +562,10 @@ footer.custom-footer {
   }
 }
 
+// Quartz writes width/height attributes on images; without height:auto a narrower screen squashes them
 .page article img {
+  height: auto !important;
+  max-width: 100%;
   border-radius: 10px;
   border: 1px solid var(--lightgray);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
@@ -1299,4 +1302,47 @@ html[data-site-theme="grunge"] {
   .page .center article img {
     box-shadow: 5px 5px 0 -1px var(--fq-hdr-1), 6px 6px 0 var(--dark);
   }
+}
+
+// ---------- Tag pills ----------
+// Inline #tags stay inline, and frontmatter tags are listed under the article
+.page article a.tag-link,
+.page .fq-post-tags a.tag-link {
+  display: inline-block !important;
+  width: auto !important;
+  padding: 0.05rem 0.55rem !important;
+  font-size: 0.82em;
+  font-weight: 600;
+  line-height: 1.6;
+  text-decoration: none !important;
+  color: var(--secondary) !important;
+  background: var(--highlight) !important;
+  border: 1px solid color-mix(in srgb, var(--secondary) 35%, transparent);
+  white-space: nowrap;
+
+  &:hover {
+    background: var(--secondary) !important;
+    color: var(--light) !important;
+  }
+}
+
+.page .fq-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 2rem 0 1rem !important;
+  padding: 1rem 0 0 !important;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.page article a.tag-link::before,
+.page .fq-post-tags a.tag-link::before {
+  content: "#";
+  color: inherit;
+  opacity: 0.7;
 }

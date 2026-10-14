@@ -28,13 +28,11 @@ export default (() => {
     if (!settings.showPostMeta || !SECTIONS.includes(section) || rest.length === 0 || /(^|\/)index$/.test(slug)) return null
 
     const fm = fileData.frontmatter as Record<string, unknown> | undefined
-    const created = parse(fm?.created ?? fm?.published ?? fileData.dates?.created)
+    const created = parse(fm?.created ?? fileData.dates?.created)
     if (!created) return null
-    const modified = parse(fm?.modified)
     const isMicro = section === "microblog"
     const words = (fileData.text ?? "").split(/\s+/).filter(Boolean).length
     const mins = Math.max(1, Math.ceil(words / 200))
-    const updated = modified && modified.d.getTime() - created.d.getTime() > 86400000 ? modified : null
     const utcTime = created.d.toISOString().slice(11, 16)
 
     return (
@@ -47,11 +45,6 @@ export default (() => {
         </span>
         {settings.relativeDates && <span class="pm-item pm-ago" data-fq-ago={created.d.toISOString()}></span>}
         {!isMicro && settings.readingTime && <span class="pm-item">{mins} min read</span>}
-        {updated && (
-          <span class="pm-item">
-            Updated <time datetime={updated.d.toISOString()}>{human(updated.d)}</time>
-          </span>
-        )}
       </div>
     )
   }

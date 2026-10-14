@@ -30,7 +30,9 @@ export function settingsLinks(html: string): string {
 
 export default (() => {
   function CustomHeader(props: QuartzComponentProps) {
+    // fq-global is tracked in git (the Obsidian syncer only publishes notes); content/ is a fallback
     const candidates = [
+      path.join(process.cwd(), "fq-global", "_header.html"),
       path.join(process.cwd(), "content", "_header.html"),
       path.join(process.cwd(), "content", "header.html"),
       path.join(process.cwd(), "content", "_header.md"),

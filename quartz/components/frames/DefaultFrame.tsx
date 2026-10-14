@@ -3,8 +3,10 @@ import HeaderConstructor from "../Header"
 import FeaturedImageConstructor from "../FeaturedImage"
 
 import PostMetaConstructor from "../PostMeta"
+import FqPostTagsConstructor from "../FqPostTags"
 
 const PostMeta = PostMetaConstructor()
+const FqPostTags = FqPostTagsConstructor()
 const Header = HeaderConstructor()
 const FeaturedImage = FeaturedImageConstructor()
 
@@ -49,6 +51,7 @@ export const DefaultFrame: PageFrame = {
           </div>
           <FeaturedImage {...componentData} />
           <Content {...componentData} />
+          <FqPostTags {...componentData} />
           <div class="page-footer">
             {afterBody.map((BodyComponent) => (
               <BodyComponent {...componentData} />
