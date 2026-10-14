@@ -40,3 +40,5 @@ Let me take you through the facets that make up who I am today. Each one has its
 If any part of my journey resonates with you, I warmly invite you to join the conversation. Share your thoughts, challenge my perspectives, or simply say hello on the [[me/Contact|contact page]].
 
 After all, we are all both students and teachers in this life, and the most meaningful growth happens through genuine connection.
+
+There is no other way.
