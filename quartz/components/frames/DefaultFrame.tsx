@@ -1,7 +1,12 @@
 import { PageFrame, PageFrameProps } from "./types"
 import HeaderConstructor from "../Header"
+import FeaturedImageConstructor from "../FeaturedImage"
 
+import PostMetaConstructor from "../PostMeta"
+
+const PostMeta = PostMetaConstructor()
 const Header = HeaderConstructor()
+const FeaturedImage = FeaturedImageConstructor()
 
 /**
  * The default page frame — three-column layout with left sidebar, center
@@ -40,9 +45,10 @@ export const DefaultFrame: PageFrame = {
                 <BodyComponent {...componentData} />
               ))}
             </div>
+            <PostMeta {...componentData} />
           </div>
+          <FeaturedImage {...componentData} />
           <Content {...componentData} />
-          <hr />
           <div class="page-footer">
             {afterBody.map((BodyComponent) => (
               <BodyComponent {...componentData} />

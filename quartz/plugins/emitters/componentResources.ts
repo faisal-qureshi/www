@@ -1,3 +1,5 @@
+import { themeScript } from "../../fq-site-theme"
+import { siteClientScript } from "../../fq-site-client"
 import { createHash } from "crypto"
 import { FullSlug, joinSegments } from "../../util/path"
 import { QuartzEmitterPlugin } from "../types"
@@ -257,6 +259,9 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       document.head.appendChild(rybbitScript);
     `)
   }
+
+  componentResources.beforeDOMLoaded.push(themeScript())
+  componentResources.afterDOMLoaded.push(siteClientScript())
 
   if (cfg.enableSPA) {
     componentResources.afterDOMLoaded.push(spaRouterScript)

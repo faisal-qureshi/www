@@ -4,6 +4,7 @@ import { CSSResourceToStyleElement, JSResourceToScriptElement } from "../util/re
 import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { unescapeHTML } from "../util/escape"
+import { featuredImageAbsoluteUrl, getFeaturedImage } from "../util/featuredImage"
 
 export default (() => {
   const Head: QuartzComponent = ({
@@ -13,12 +14,47 @@ export default (() => {
     ctx,
   }: QuartzComponentProps) => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
-    const title =
-      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+    const pageTitle = fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
+    const seoTitle = String(fileData.frontmatter?.seoTitle ?? "").trim()
+    const title = seoTitle || (pageTitle === cfg.pageTitle ? pageTitle : pageTitle + titleSuffix)
+    const nonEmpty = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : undefined)
     const description =
-      fileData.frontmatter?.socialDescription ??
-      fileData.frontmatter?.description ??
+      nonEmpty(fileData.frontmatter?.socialDescription) ??
+      nonEmpty(fileData.frontmatter?.description) ??
       unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description)
+
+    // The featured image doubles as the social card; the og-image plugin reads `socialImage`
+    const featured = getFeaturedImage(fileData.frontmatter, description)
+    const featuredUrl = featured ? featuredImageAbsoluteUrl(featured, cfg.baseUrl) : undefined
+    // Quartz copies `image` into `socialImage`, which the plugin resolves under /static, so replace it
+    const existingSocial = fileData.frontmatter?.socialImage
+    if (
+      featuredUrl &&
+      fileData.frontmatter &&
+      (!existingSocial || existingSocial === fileData.frontmatter.image)
+    ) {
+      fileData.frontmatter.socialImage = featuredUrl
+    }
+    const isArticle = /^(blog|microblog)\//.test(fileData.slug ?? "")
+    const siteUrl = cfg.baseUrl ? `https://${cfg.baseUrl}/` : undefined
+    const jsonLd =
+      fileData.slug === "index" && siteUrl
+        ? {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Person",
+                name: "Faisal Qureshi",
+                url: siteUrl,
+                description,
+                jobTitle: ["Journalist", "TV Host", "Tech Entrepreneur"],
+                image: featuredUrl,
+                sameAs: ["https://x.com/faisalqureshi", "https://instagram.com/faisalqureshi"],
+              },
+              { "@type": "WebSite", name: cfg.pageTitle, url: siteUrl },
+            ],
+          }
+        : undefined
 
     const { css, js, additionalHead } = externalResources
 
@@ -62,12 +98,19 @@ export default (() => {
 
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
         <meta property="og:title" content={title} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={isArticle ? "article" : "website"} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
-        <meta property="og:image:alt" content={description} />
+        <meta property="og:image:alt" content={featured?.alt ?? description} />
+        <meta name="twitter:image:alt" content={featured?.alt ?? description} />
+        {jsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+        )}
 
         {!usesCustomOgImage && (
           <>

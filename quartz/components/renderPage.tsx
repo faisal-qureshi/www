@@ -1,3 +1,5 @@
+import { defaultTheme, themes } from "../fq-site-theme"
+import { settings } from "../fq-site-settings"
 import { render } from "preact-render-to-string"
 import { QuartzComponent, QuartzComponentProps } from "./types"
 import BodyConstructor from "./Body"
@@ -14,6 +16,8 @@ import { GlobalConfiguration } from "../cfg"
 import { i18n } from "../i18n"
 import { styleText } from "util"
 import { resolveFrame } from "./frames"
+import CustomHeaderConstructor from "./CustomHeader"
+import CustomFooterConstructor from "./CustomFooter"
 import type { TreeTransform } from "../plugins/types"
 import type { BuildCtx } from "../util/ctx"
 
@@ -28,6 +32,9 @@ interface RenderComponents {
   footer: QuartzComponent[]
   frame?: string
 }
+
+const SiteHeader = CustomHeaderConstructor()
+const SiteFooter = CustomFooterConstructor()
 
 const headerRegex = new RegExp(/h[1-6]/)
 export function pageResources(
@@ -344,11 +351,13 @@ export function renderPage(
       ? ""
       : new URL(`https://${cfg.baseUrl}`).pathname.replace(/\/$/, "")
   const doc = (
-    <html lang={lang} dir={direction}>
+    <html lang={lang} dir={direction} data-site-theme={defaultTheme} saved-theme={themes[defaultTheme]?.mode}
+      data-hide={Object.entries(settings.hide).filter(([, v]) => v).map(([k]) => k).concat(settings.showDarkModeButton ? [] : ["darkmode"]).join(" ")}>
       <Head {...componentData} />
       <body data-slug={slug} data-basepath={basePath}>
         {frame.css && <style dangerouslySetInnerHTML={{ __html: frame.css }} />}
         <div id="quartz-root" class="page" data-frame={frame.name}>
+          <SiteHeader {...componentData} />
           <Body {...componentData}>
             {[
               frame.render({
@@ -364,6 +373,7 @@ export function renderPage(
               }),
             ]}
           </Body>
+          <SiteFooter {...componentData} />
         </div>
       </body>
       {pageResources.js

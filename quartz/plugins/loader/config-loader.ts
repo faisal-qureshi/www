@@ -1,4 +1,5 @@
 import fs from "fs"
+import { siteComponentOptions } from "../../fq-site-overrides"
 import path from "path"
 import YAML from "yaml"
 import { styleText } from "util"
@@ -363,7 +364,12 @@ export async function loadQuartzConfig(
           // so component-only plugins can receive user configuration from YAML.
           if (typeof module.init === "function") {
             const initOverrides = componentRegistry.getOptionOverrides(gitSpec.name)
-            const options = { ...manifest?.defaultOptions, ...entry.options, ...initOverrides }
+            const options = {
+              ...manifest?.defaultOptions,
+              ...entry.options,
+              ...siteComponentOptions[gitSpec.name.split("/").pop() as string],
+              ...initOverrides,
+            }
             await module.init(Object.keys(options).length > 0 ? options : undefined)
           }
         } catch (e) {
@@ -777,7 +783,7 @@ export function buildLayoutForEntries(
       // It's a constructor — use registry cache to avoid duplicate instances
       // (and duplicate afterDOMLoaded scripts) across page-type layouts
       const tsOverrides = componentRegistry.getOptionOverrides(name)
-      const opts = { ...entry.options, ...tsOverrides }
+      const opts = { ...entry.options, ...siteComponentOptions[name.split("/").pop() as string], ...tsOverrides }
       const optsArg = Object.keys(opts).length > 0 ? opts : undefined
       component = componentRegistry.instantiate(
         reg.component as QuartzComponentConstructor,
@@ -834,7 +840,7 @@ export function buildLayoutForEntries(
     let component: QuartzComponent
     if (typeof reg.component === "function" && !("displayName" in reg.component)) {
       const tsOverrides = componentRegistry.getOptionOverrides(name)
-      const opts = { ...entry.options, ...tsOverrides }
+      const opts = { ...entry.options, ...siteComponentOptions[name.split("/").pop() as string], ...tsOverrides }
       const optsArg = Object.keys(opts).length > 0 ? opts : undefined
       component = componentRegistry.instantiate(
         reg.component as QuartzComponentConstructor,

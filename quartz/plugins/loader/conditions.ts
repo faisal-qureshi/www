@@ -1,9 +1,15 @@
 import { QuartzComponentProps } from "../../components/types"
+import { settings } from "../../fq-site-settings"
 
 export type ConditionPredicate = (props: QuartzComponentProps) => boolean
 
 const builtinConditions: Record<string, ConditionPredicate> = {
   "not-index": (props) => props.fileData.slug !== "index",
+  // Posts live in the content sections; section landing pages, home, contact, 404 etc. are excluded.
+  "is-post": (props) => {
+    const slug = String(props.fileData.slug ?? "")
+    return settings.postSections.includes(slug.split("/")[0]) && slug.includes("/") && !/(^|\/)index$/.test(slug)
+  },
   "has-tags": (props) => {
     const tags = props.fileData.frontmatter?.tags
     return Array.isArray(tags) && tags.length > 0
