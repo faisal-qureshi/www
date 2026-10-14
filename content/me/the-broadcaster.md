@@ -1,6 +1,6 @@
 ---
 publish: true
-permalink: /me/the-broadcaster.md
+permalink: /me/broadcaster
 title: The Broadcaster
 description: Faisal Qureshi was among Pakistan's first generation of TV talk show hosts. Today he blogs, but he vlogs far more, because speaking comes more naturally than writing.
 lang: en

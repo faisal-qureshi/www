@@ -1,6 +1,6 @@
 ---
 publish: true
-permalink: /
+permalink: /index.md
 aliases:
   - home
   - welcome
