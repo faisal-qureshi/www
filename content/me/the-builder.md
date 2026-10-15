@@ -6,7 +6,7 @@ description: How an electrical engineering degree, twenty years of running a sof
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-15T10:11:33.459Z
+modified: 2026-10-15T14:54:28.641Z
 tags:
   - about
   - me

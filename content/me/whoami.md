@@ -5,7 +5,7 @@ title: Who Am I
 lang: en
 enableToc: true
 created: 2026-10-12
-modified: 2026-10-14T10:12:04.997Z
+modified: 2026-10-15T14:54:42.129Z
 ---
 
 Hello. Thank you very much for stopping by.

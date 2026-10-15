@@ -6,7 +6,7 @@ description: Faisal Qureshi was among Pakistan's first generation of TV talk sho
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-15T10:11:33.448Z
+modified: 2026-10-15T14:54:25.528Z
 tags:
   - about
   - me
