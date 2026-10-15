@@ -30,7 +30,14 @@
 @use "sass:map";
 @use "./variables.scss" as *;
 
-$sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$sans:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  "Helvetica Neue",
+  Arial,
+  sans-serif;
 
 // Mixin: make an element span the full browser width even inside a centred column
 // (used by the header and footer bands).
@@ -123,74 +130,212 @@ $grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' wid
 
 $themes: (
   pastel: (
-    light: #fffaf4, lightgray: #eaded2, gray: #a198ad, darkgray: #5a5167, dark: #3b3347,
-    secondary: #c2527a, tertiary: #3f9a83, highlight: rgba(194, 82, 122, 0.1),
-    surface: #ffffff, accent: #f2a65a,
-    hdr1: #fde2e4, hdr2: #fbeedd, hdr3: #e4f1ec, hdr4: #ebe4f7,
-    footerBg: #e9e1f5, footerInk: #3b3347, shadow: rgba(90, 60, 110, 0.12),
-    bg: (radial-gradient(60rem 28rem at 8% -6%, #fde2e4 0%, transparent 60%), radial-gradient(55rem 26rem at 96% -4%, #e4f1ec 0%, transparent 60%), radial-gradient(60rem 30rem at 50% 108%, #ebe4f7 0%, transparent 60%)),
+    light: #fffaf4,
+    lightgray: #eaded2,
+    gray: #a198ad,
+    darkgray: #5a5167,
+    dark: #3b3347,
+    secondary: #c2527a,
+    tertiary: #3f9a83,
+    highlight: rgba(194, 82, 122, 0.1),
+    surface: #ffffff,
+    accent: #f2a65a,
+    hdr1: #fde2e4,
+    hdr2: #fbeedd,
+    hdr3: #e4f1ec,
+    hdr4: #ebe4f7,
+    footerBg: #e9e1f5,
+    footerInk: #3b3347,
+    shadow: rgba(90, 60, 110, 0.12),
+    bg: (
+      radial-gradient(60rem 28rem at 8% -6%, #fde2e4 0%, transparent 60%),
+      radial-gradient(55rem 26rem at 96% -4%, #e4f1ec 0%, transparent 60%),
+      radial-gradient(60rem 30rem at 50% 108%, #ebe4f7 0%, transparent 60%),
+    ),
   ),
   simple: (
-    light: #ffffff, lightgray: #d8d8d8, gray: #595959, darkgray: #222222, dark: #000000,
-    secondary: #0b57d0, tertiary: #b3261e, highlight: rgba(11, 87, 208, 0.1),
-    surface: #ffffff, accent: #0b57d0,
-    hdr1: #f4f4f4, hdr2: #ffffff, hdr3: #f4f4f4, hdr4: #ffffff,
-    footerBg: #f4f4f4, footerInk: #111111, shadow: rgba(0, 0, 0, 0.1),
+    light: #ffffff,
+    lightgray: #d8d8d8,
+    gray: #595959,
+    darkgray: #222222,
+    dark: #000000,
+    secondary: #0b57d0,
+    tertiary: #b3261e,
+    highlight: rgba(11, 87, 208, 0.1),
+    surface: #ffffff,
+    accent: #0b57d0,
+    hdr1: #f4f4f4,
+    hdr2: #ffffff,
+    hdr3: #f4f4f4,
+    hdr4: #ffffff,
+    footerBg: #f4f4f4,
+    footerInk: #111111,
+    shadow: rgba(0, 0, 0, 0.1),
     bg: (linear-gradient(#ffffff, #ffffff)),
   ),
   grunge: (
-    light: #fbf3ee, lightgray: #e4d3cc, gray: #7c6b73, darkgray: #3f3340, dark: #231a26,
-    secondary: #e0366f, tertiary: #2b8f86, highlight: rgba(224, 54, 111, 0.12),
-    surface: #fffaf6, accent: #ffc94d,
-    hdr1: #ffd9e0, hdr2: #fff0c9, hdr3: #cfe8ff, hdr4: #e1d6f7,
-    footerBg: #e8dff5, footerInk: #231a26, shadow: rgba(35, 26, 38, 0.35),
-    bg: ($dots, $grain, radial-gradient(60rem 28rem at 8% -6%, #ffd9e0 0%, transparent 60%), radial-gradient(55rem 26rem at 96% -4%, #cfe8ff 0%, transparent 60%)),
+    light: #fbf3ee,
+    lightgray: #e4d3cc,
+    gray: #7c6b73,
+    darkgray: #3f3340,
+    dark: #231a26,
+    secondary: #e0366f,
+    tertiary: #2b8f86,
+    highlight: rgba(224, 54, 111, 0.12),
+    surface: #fffaf6,
+    accent: #ffc94d,
+    hdr1: #ffd9e0,
+    hdr2: #fff0c9,
+    hdr3: #cfe8ff,
+    hdr4: #e1d6f7,
+    footerBg: #e8dff5,
+    footerInk: #231a26,
+    shadow: rgba(35, 26, 38, 0.35),
+    bg: (
+      $dots,
+      $grain,
+      radial-gradient(60rem 28rem at 8% -6%, #ffd9e0 0%, transparent 60%),
+      radial-gradient(55rem 26rem at 96% -4%, #cfe8ff 0%, transparent 60%),
+    ),
   ),
   meadow: (
-    light: #f8f9ef, lightgray: #dfe5cc, gray: #9aa089, darkgray: #4f5a44, dark: #2f3a28,
-    secondary: #4f7d45, tertiary: #b86f2f, highlight: rgba(79, 125, 69, 0.1),
-    surface: #fffffb, accent: #e3a94b,
-    hdr1: #e6efd0, hdr2: #f6f1d9, hdr3: #dfeede, hdr4: #efe9d6,
-    footerBg: #dfe8cc, footerInk: #2f3a28, shadow: rgba(60, 80, 40, 0.14),
-    bg: (radial-gradient(60rem 28rem at 6% -6%, #e6efd0 0%, transparent 60%), radial-gradient(55rem 26rem at 98% -4%, #f6f1d9 0%, transparent 60%), radial-gradient(60rem 30rem at 50% 108%, #dfeede 0%, transparent 60%)),
+    light: #f8f9ef,
+    lightgray: #dfe5cc,
+    gray: #9aa089,
+    darkgray: #4f5a44,
+    dark: #2f3a28,
+    secondary: #4f7d45,
+    tertiary: #b86f2f,
+    highlight: rgba(79, 125, 69, 0.1),
+    surface: #fffffb,
+    accent: #e3a94b,
+    hdr1: #e6efd0,
+    hdr2: #f6f1d9,
+    hdr3: #dfeede,
+    hdr4: #efe9d6,
+    footerBg: #dfe8cc,
+    footerInk: #2f3a28,
+    shadow: rgba(60, 80, 40, 0.14),
+    bg: (
+      radial-gradient(60rem 28rem at 6% -6%, #e6efd0 0%, transparent 60%),
+      radial-gradient(55rem 26rem at 98% -4%, #f6f1d9 0%, transparent 60%),
+      radial-gradient(60rem 30rem at 50% 108%, #dfeede 0%, transparent 60%),
+    ),
   ),
   seaside: (
-    light: #f5fafc, lightgray: #d9e6ec, gray: #8fa3ad, darkgray: #44596a, dark: #243546,
-    secondary: #2a6f9e, tertiary: #c9573d, highlight: rgba(42, 111, 158, 0.1),
-    surface: #ffffff, accent: #f0b35a,
-    hdr1: #d9ecf5, hdr2: #eef6f8, hdr3: #fbeedb, hdr4: #e3eef3,
-    footerBg: #d4e6ef, footerInk: #243546, shadow: rgba(40, 80, 110, 0.14),
-    bg: (radial-gradient(60rem 28rem at 6% -6%, #d9ecf5 0%, transparent 60%), radial-gradient(55rem 26rem at 98% -4%, #fbeedb 0%, transparent 60%), radial-gradient(60rem 30rem at 50% 108%, #e3eef3 0%, transparent 60%)),
+    light: #f5fafc,
+    lightgray: #d9e6ec,
+    gray: #8fa3ad,
+    darkgray: #44596a,
+    dark: #243546,
+    secondary: #2a6f9e,
+    tertiary: #c9573d,
+    highlight: rgba(42, 111, 158, 0.1),
+    surface: #ffffff,
+    accent: #f0b35a,
+    hdr1: #d9ecf5,
+    hdr2: #eef6f8,
+    hdr3: #fbeedb,
+    hdr4: #e3eef3,
+    footerBg: #d4e6ef,
+    footerInk: #243546,
+    shadow: rgba(40, 80, 110, 0.14),
+    bg: (
+      radial-gradient(60rem 28rem at 6% -6%, #d9ecf5 0%, transparent 60%),
+      radial-gradient(55rem 26rem at 98% -4%, #fbeedb 0%, transparent 60%),
+      radial-gradient(60rem 30rem at 50% 108%, #e3eef3 0%, transparent 60%),
+    ),
   ),
   rustic: (
-    light: #2a1418, lightgray: #5b3a3d, gray: #b59a84, darkgray: #e6d3b8, dark: #f6e9d2,
-    secondary: #e6b85c, tertiary: #93c595, highlight: rgba(230, 184, 92, 0.14),
-    surface: #3a1d22, accent: #d9a441,
-    hdr1: #5a1f2b, hdr2: #451a22, hdr3: #1f4030, hdr4: #2a1418,
-    footerBg: #1d3a2b, footerInk: #f6e9d2, shadow: rgba(0, 0, 0, 0.4),
-    paper: #ece0c8, paperLine: #d3c2a0, ink: #2b1f17, inkSoft: #4b3a2d, inkMute: #8a7762,
-    paperSecondary: #8c2a3b, paperTertiary: #2f6b4a,
-    bg: (radial-gradient(60rem 30rem at 50% -10%, #5a1f2b 0%, transparent 65%), radial-gradient(50rem 26rem at 100% 100%, #1f4030 0%, transparent 60%), $noise),
+    light: #2a1418,
+    lightgray: #5b3a3d,
+    gray: #b59a84,
+    darkgray: #e6d3b8,
+    dark: #f6e9d2,
+    secondary: #e6b85c,
+    tertiary: #93c595,
+    highlight: rgba(230, 184, 92, 0.14),
+    surface: #3a1d22,
+    accent: #d9a441,
+    hdr1: #5a1f2b,
+    hdr2: #451a22,
+    hdr3: #1f4030,
+    hdr4: #2a1418,
+    footerBg: #1d3a2b,
+    footerInk: #f6e9d2,
+    shadow: rgba(0, 0, 0, 0.4),
+    paper: #ece0c8,
+    paperLine: #d3c2a0,
+    ink: #2b1f17,
+    inkSoft: #4b3a2d,
+    inkMute: #8a7762,
+    paperSecondary: #8c2a3b,
+    paperTertiary: #2f6b4a,
+    bg: (
+      radial-gradient(60rem 30rem at 50% -10%, #5a1f2b 0%, transparent 65%),
+      radial-gradient(50rem 26rem at 100% 100%, #1f4030 0%, transparent 60%),
+      $noise,
+    ),
   ),
   evergreen: (
-    light: #14231c, lightgray: #2f4a3c, gray: #8fa898, darkgray: #cfe0d1, dark: #eef3e6,
-    secondary: #d8b86a, tertiary: #86c9a5, highlight: rgba(216, 184, 106, 0.14),
-    surface: #1d3228, accent: #d8b86a,
-    hdr1: #234a38, hdr2: #1b3a2c, hdr3: #30402a, hdr4: #14231c,
-    footerBg: #0f1c16, footerInk: #e6efdc, shadow: rgba(0, 0, 0, 0.4),
-    paper: #e6e9d6, paperLine: #cbd2b4, ink: #1f2b22, inkSoft: #3d4d40, inkMute: #7b8a7c,
-    paperSecondary: #2f6b4a, paperTertiary: #a8742a,
-    bg: (radial-gradient(60rem 30rem at 50% -10%, #234a38 0%, transparent 65%), $noise),
+    light: #14231c,
+    lightgray: #2f4a3c,
+    gray: #8fa898,
+    darkgray: #cfe0d1,
+    dark: #eef3e6,
+    secondary: #d8b86a,
+    tertiary: #86c9a5,
+    highlight: rgba(216, 184, 106, 0.14),
+    surface: #1d3228,
+    accent: #d8b86a,
+    hdr1: #234a38,
+    hdr2: #1b3a2c,
+    hdr3: #30402a,
+    hdr4: #14231c,
+    footerBg: #0f1c16,
+    footerInk: #e6efdc,
+    shadow: rgba(0, 0, 0, 0.4),
+    paper: #e6e9d6,
+    paperLine: #cbd2b4,
+    ink: #1f2b22,
+    inkSoft: #3d4d40,
+    inkMute: #7b8a7c,
+    paperSecondary: #2f6b4a,
+    paperTertiary: #a8742a,
+    bg: (
+      radial-gradient(60rem 30rem at 50% -10%, #234a38 0%, transparent 65%),
+      $noise,
+    ),
   ),
   midnight: (
-    light: #111a2c, lightgray: #2b3a58, gray: #8798b5, darkgray: #d3dcef, dark: #edf1fa,
-    secondary: #9bbcff, tertiary: #7fd6bd, highlight: rgba(155, 188, 255, 0.14),
-    surface: #1a2640, accent: #e8b25a,
-    hdr1: #1e2f55, hdr2: #17243f, hdr3: #22385e, hdr4: #111a2c,
-    footerBg: #0c1322, footerInk: #dfe7f6, shadow: rgba(0, 0, 0, 0.45),
-    paper: #e4e9f1, paperLine: #c5cfe0, ink: #1b2434, inkSoft: #3b475e, inkMute: #76839b,
-    paperSecondary: #2b5bb5, paperTertiary: #1f7a66,
-    bg: (radial-gradient(60rem 30rem at 50% -10%, #1e2f55 0%, transparent 65%), $noise),
+    light: #111a2c,
+    lightgray: #2b3a58,
+    gray: #8798b5,
+    darkgray: #d3dcef,
+    dark: #edf1fa,
+    secondary: #9bbcff,
+    tertiary: #7fd6bd,
+    highlight: rgba(155, 188, 255, 0.14),
+    surface: #1a2640,
+    accent: #e8b25a,
+    hdr1: #1e2f55,
+    hdr2: #17243f,
+    hdr3: #22385e,
+    hdr4: #111a2c,
+    footerBg: #0c1322,
+    footerInk: #dfe7f6,
+    shadow: rgba(0, 0, 0, 0.45),
+    paper: #e4e9f1,
+    paperLine: #c5cfe0,
+    ink: #1b2434,
+    inkSoft: #3b475e,
+    inkMute: #76839b,
+    paperSecondary: #2b5bb5,
+    paperTertiary: #1f7a66,
+    bg: (
+      radial-gradient(60rem 30rem at 50% -10%, #1e2f55 0%, transparent 65%),
+      $noise,
+    ),
   ),
 );
 
@@ -286,7 +431,24 @@ html[saved-theme="dark"] .page > #quartz-body > .center {
 // code etc. with light-on-dark colours. Force everything inside the paper card back to ink.
 html[saved-theme="dark"] .page > #quartz-body > .center {
   article,
-  article :is(p, li, td, th, dt, dd, em, strong, span, figcaption, blockquote, .callout, .callout-title-inner, .callout-content, .callout-content *) {
+  article
+    :is(
+      p,
+      li,
+      td,
+      th,
+      dt,
+      dd,
+      em,
+      strong,
+      span,
+      figcaption,
+      blockquote,
+      .callout,
+      .callout-title-inner,
+      .callout-content,
+      .callout-content *
+    ) {
     color: var(--fq-ink-soft);
   }
 
@@ -403,7 +565,9 @@ html[data-hide~="darkmode"] .darkmode {
       text-transform: uppercase;
       letter-spacing: 0.08em;
       border-bottom: 3px solid transparent;
-      transition: border-color 0.15s ease, color 0.15s ease;
+      transition:
+        border-color 0.15s ease,
+        color 0.15s ease;
 
       &:hover {
         color: var(--secondary);
@@ -813,7 +977,6 @@ footer.custom-footer {
   }
 }
 
-
 // ---------- Sidebar: always-open TOC & backlinks, compact, colourful ----------
 .page .sidebar {
   .toc {
@@ -1222,7 +1385,6 @@ footer.custom-footer {
   }
 }
 
-
 // Let the theme's page background show through the layout columns
 .page > #quartz-body,
 .page > #quartz-body > .center,
@@ -1387,7 +1549,9 @@ html[data-site-theme="grunge"] {
 
   .page .sidebar .search .search-button,
   .page .center article img {
-    box-shadow: 5px 5px 0 -1px var(--fq-hdr-1), 6px 6px 0 var(--dark);
+    box-shadow:
+      5px 5px 0 -1px var(--fq-hdr-1),
+      6px 6px 0 var(--dark);
   }
 }
 
@@ -1453,7 +1617,9 @@ html[data-site-theme="grunge"] {
   display: none;
 }
 
-.page article a[href^="http"]:not(.external, .no-icon, .internal, .tag-link):not(:has(> img))::after {
+.page
+  article
+  a[href^="http"]:not(.external, .no-icon, .internal, .tag-link):not(:has(> img))::after {
   content: "";
   display: inline-block;
   width: 0.7em;
@@ -1461,8 +1627,10 @@ html[data-site-theme="grunge"] {
   margin-left: 0.25em;
   opacity: 0.7;
   background-color: currentColor;
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'><path d='M7 17L17 7M8 7h9v9'/></svg>") center / contain no-repeat;
-  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'><path d='M7 17L17 7M8 7h9v9'/></svg>") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'><path d='M7 17L17 7M8 7h9v9'/></svg>")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'><path d='M7 17L17 7M8 7h9v9'/></svg>")
+    center / contain no-repeat;
 }
 
 // ---------- Table of contents on tablet/mobile ----------
@@ -1516,4 +1684,98 @@ h4,
 h5,
 h6 {
   text-transform: capitalize;
+}
+
+// -- home page --
+.card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+  gap: 1.4rem !important;
+  padding: 1.5rem 0;
+}
+
+.card {
+  border: 3px solid #c9a227 !important;
+  border-radius: 6px;
+  padding: 1.4rem 1rem;
+  text-align: center;
+  text-decoration: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 190px;
+  aspect-ratio: 1 / 1.15;
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.12'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25) !important;
+}
+
+.card .icon {
+  font-size: 2.8rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+.card .title {
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin: 0.2rem 0;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.3px;
+}
+.card .sub {
+  font-size: 0.68rem;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.card.navy {
+  background: #1a3558 !important;
+  color: #f5f0e6 !important;
+}
+.card.burgundy {
+  background: #5e2a38 !important;
+  color: #f5f0e6 !important;
+}
+.card.forest {
+  background: #2a4438 !important;
+  color: #f5f0e6 !important;
+}
+.card.gold {
+  background: #c9a227 !important;
+  color: #1a1a1a !important;
+}
+.card.purple {
+  background: #432a52 !important;
+  color: #f5f0e6 !important;
+}
+.card.brown {
+  background: #4e382c !important;
+  color: #f5f0e6 !important;
 }
