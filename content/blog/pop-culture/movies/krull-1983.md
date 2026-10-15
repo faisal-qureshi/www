@@ -1,15 +1,18 @@
 ---
 publish: true
 permalink: /blog/pop-culture/movies/krull-1983.md
-title: "The Beautiful Tragedy of Fate: Why the 1983 Fantasy 'Krull' Still Breaks My Heart"
+title: Krull (1983)
 comments: true
 enableToc: true
 created: 2026-10-15T05:45:11Z
-modified: 2026-10-15T06:11:13.733Z
+modified: 2026-10-15T06:44:37.979Z
 tags:
   - blog
 ---
 
+# The Beautiful Tragedy of Fate
+
+This [1983](https://www.history.com/a-year-in-history/1983)  Fantasy '[Krull](https://www.imdb.com/title/tt0085811/)' Still Breaks My Heart.
 ![[blog/pop-culture/movies/krull-1983-1792043849190.webp|700x391]]
 
 When I revisit the 1983 sci-fi fantasy epic [Krull](https://www.imdb.com/title/tt0085811/), I don’t just see a nostalgic relic of 80s practical effects, laser swords, and giant spiders. I see a haunting, deeply melancholic meditation on mortality. Beneath its swashbuckling surface lies a profound emotional core, anchored by one of the most tragic and beautiful characters in cinematic history: [[rell-the-cyclops-from-movie-krull|Rell The Cyclops]]

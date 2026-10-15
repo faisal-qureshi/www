@@ -6,7 +6,7 @@ description: Faisal Qureshi was among Pakistan's first generation of TV talk sho
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-14T10:12:04.998Z
+modified: 2026-10-15T10:11:33.448Z
 tags:
   - about
   - me
@@ -39,4 +39,4 @@ Whether it's a thought, an idea or a lesson, I often prefer to record a video an
 
 ---
 
-**Previous:** [[me/the-builder|← The Builder]]  ·  **Next:** [[me/the-seeker|The Seeker →]]
+**Previous:** [[the-builder|← The Builder]]  ·  **Next:** [[the-seeker|The Seeker →]]

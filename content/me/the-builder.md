@@ -6,7 +6,7 @@ description: How an electrical engineering degree, twenty years of running a sof
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-14T10:12:04.996Z
+modified: 2026-10-15T10:11:33.459Z
 tags:
   - about
   - me
@@ -41,4 +41,4 @@ I have also learned that intellectual rigour must go hand in hand with humility 
 
 ---
 
-**Next door:** [[me/the-broadcaster|The Broadcaster →]]  ·  **Back to** [[me/about|About me]]
+**Next door:** [[the-broadcaster|The Broadcaster →]]  ·  **Back to** [[about-me|About me]]

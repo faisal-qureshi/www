@@ -6,7 +6,7 @@ description: Faisal Qureshi on choosing Islam through exploration, learning as t
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-14T10:12:04.997Z
+modified: 2026-10-15T10:11:33.465Z
 tags:
   - about
   - me
@@ -43,4 +43,4 @@ Whether through writing, speaking or personal mentoring, I believe wisdom multip
 
 ---
 
-**Previous:** [[me/the-broadcaster|← The Broadcaster]]  ·  **Next:** [[me/the-human|The Human →]]
+**Previous:** [[the-broadcaster|← The Broadcaster]]  ·  **Next:** [[the-human|The Human →]]

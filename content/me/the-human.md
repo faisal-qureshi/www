@@ -6,7 +6,7 @@ description: Faisal Qureshi on retiring early, constantly reinventing himself, e
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-14T10:12:04.998Z
+modified: 2026-10-15T10:29:28.445Z
 tags:
   - about
   - me
@@ -50,4 +50,4 @@ The present moment always offers new opportunities for understanding, while the 
 
 ---
 
-**Previous:** [[me/the-seeker|← The Seeker]]  ·  **Back to** [[me/about|About me]]  ·  **Say hello:** [[me/Contact|Contact]]
+**Previous:** [[the-seeker|← The Seeker]]  ·  **Back to** [[about-me|About me]]  ·  **Say hello:** [[contact|Contact]]

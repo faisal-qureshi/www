@@ -1,13 +1,13 @@
 ---
 publish: true
 permalink: /blog/pop-culture/movies/in-time-2011.md
-title: In Time
+title: In Time (2011)
 description: This 2011 Sci-fi movie is one of my all time favorites. A real eye-opener about time and mindfulness
 comments: true
 lang: en
 enableToc: true
 created: 2026-10-15T04:37:00Z
-modified: 2026-10-15T06:29:05.155Z
+modified: 2026-10-15T06:42:28.311Z
 tags:
   - blog
   - pop-culture
