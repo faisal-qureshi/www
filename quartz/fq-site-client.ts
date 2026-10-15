@@ -20,6 +20,11 @@ export function siteClientScript(): string {
     return "";
   }
   function run() {
+    document.querySelectorAll("article a[href^=http]").forEach(function (a) {
+      if (a.hostname === location.hostname) return;
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener noreferrer");
+    });
     document.querySelectorAll("time[data-fq-ts][data-fq-full=time]").forEach(function (t) {
       var d = new Date(t.getAttribute("data-fq-ts"));
       if (isNaN(d)) return;

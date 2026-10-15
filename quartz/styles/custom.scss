@@ -1,8 +1,39 @@
+// =============================================================================
+// custom.scss — ALL of the site's own styling (loaded after Quartz's base.scss)
+// =============================================================================
+// QUICK MAP (search for the "----------" banners below):
+//   1. Headings & body ........ fonts, title size, paragraph spacing
+//   2. Themes ................. colour palettes ($themes map) -> CSS variables
+//   3. Dark-theme paper card .. dark themes show the article as dark text on light
+//   4. Header / Footer ........ markup lives in fq-global/_header.html & _footer.html
+//   5. Heading rhythm, images . spacing above H2+, featured image, tags
+//   6. Search, sidebar cards .. search box, explorer, TOC, backlinks, graph
+//   7. Breadcrumbs, post meta . pill breadcrumbs, date line
+//   8. Folder listings ........ index pages (blog, microblog, music, videos)
+//   9. Mobile (<=800px) ....... top bar, hamburger, full-width cards
+//  10. Settings page .......... /settings visitor controls
+//  11. Light/dark button, Grunge dotted shadows
+//
+// HOW COLOURS WORK
+//   Every colour is a CSS variable (--light, --dark, --secondary, --fq-*).
+//   The active theme (set on <html data-site-theme="..."> by fq-site-theme.ts)
+//   decides their values. Never hard-code colours in a component: use a variable.
+//
+// RELATED FILES
+//   quartz/fq-site-settings.ts  which themes are enabled, defaults, hidden parts
+//   quartz/fq-site-theme.ts     theme registry (ids/labels) + light/dark switching
+//   quartz/fq-site-client.ts    browser script: settings page, saving choices
+//   fq-global/_header.html, _footer.html  global header & footer markup
+//   variables.scss / base.scss / callouts.scss / syntax.scss  Quartz core (avoid editing)
+// =============================================================================
+
 @use "sass:map";
 @use "./variables.scss" as *;
 
 $sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 
+// Mixin: make an element span the full browser width even inside a centred column
+// (used by the header and footer bands).
 // Full-bleed breakout from the centered page container
 @mixin bleed {
   width: 100vw;
@@ -66,7 +97,25 @@ h6 {
 // ---------- Themes ----------
 // Each entry maps the Quartz colour variables onto a palette. Add the same id in
 // fq-site-theme.ts and fq-site-settings.ts to make it selectable.
-// Dark themes also define a muted "paper" set: article text is always dark on light.
+//
+// PALETTE KEYS (every theme):
+//   light      page/card background          lightgray  borders, dividers
+//   gray       muted text (dates, captions)  darkgray   body text
+//   dark       headings, strongest text      secondary  links, active items
+//   tertiary   2nd accent (hover, TOC)       highlight  hover/selection tint
+//   surface    sidebar card background       accent     header underline, small flourishes
+//   hdr1..hdr4 the four header rows' backgrounds (top image row -> nav row)
+//   footerBg / footerInk   footer background / text
+//   shadow     colour used for card shadows
+//   bg         page background layers (gradients, dots, grain), top layer first
+// DARK THEMES ONLY (the article "paper" card — dark text on light, easy reading):
+//   paper / paperLine      card background / border
+//   ink / inkSoft / inkMute  headings / body text / muted text on the card
+//   paperSecondary / paperTertiary  link colours on the card
+// Note: in dark themes "light"/"dark" are the page's colours, so they look inverted.
+//
+// Background texture images (inline SVG, so no extra files):
+//   $noise = faint warm speckle, $dots = Grunge halftone dots, $grain = Grunge grit.
 $noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85  0 0 0 0 0.65  0 0 0 0 0.4  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 
 $dots: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='9' height='9'><circle cx='4.5' cy='4.5' r='1.1' fill='%23231a26' fill-opacity='0.16'/></svg>");
@@ -145,6 +194,7 @@ $themes: (
   ),
 );
 
+// Turns one theme map into the CSS variables the rest of this file (and Quartz) use.
 @mixin tokens($t) {
   --light: #{map.get($t, light)};
   --lightgray: #{map.get($t, lightgray)};
@@ -185,12 +235,14 @@ $themes: (
   }
 }
 
+// One rule per theme: html[data-site-theme="pastel"][saved-theme] { --light: ...; }
 @each $name, $t in $themes {
   html[data-site-theme="#{$name}"][saved-theme] {
     @include tokens($t);
   }
 }
 
+// Paint the page background from the active theme (colour + gradient/texture layers).
 html[data-site-theme] body,
 html[data-site-theme] #quartz-root {
   background-color: var(--light);
@@ -200,12 +252,15 @@ html[data-site-theme] #quartz-root {
   color: var(--darkgray);
 }
 
+// Dark themes with a texture layer need that layer to tile.
 html[saved-theme="dark"] body,
 html[saved-theme="dark"] #quartz-root {
   background-repeat: no-repeat, no-repeat, repeat;
 }
 
-// The article column: always dark text on a (muted) light page, even in dark themes
+// The article column: re-point the colour variables at the "paper" set, so everything
+// inside it (links, borders, headings) automatically uses dark-on-light colours,
+// even when the surrounding page is a dark theme.
 .page .center {
   --light: var(--fq-paper);
   --lightgray: var(--fq-paper-line);
@@ -217,12 +272,40 @@ html[saved-theme="dark"] #quartz-root {
   color: var(--fq-ink-soft);
 }
 
+// Dark themes: the article is a light "paper" card. content-box + 24px side padding
+// matches the base layout so the card stays centred (border-box made it narrower).
 html[saved-theme="dark"] .page > #quartz-body > .center {
   background: var(--fq-paper);
-  border: 1px solid var(--fq-paper-line);
-  box-shadow: 0 10px 30px var(--fq-shadow);
-  padding: 1.25rem 1.25rem 2rem;
-  box-sizing: border-box;
+  box-shadow:
+    inset 0 0 0 1px var(--fq-paper-line),
+    0 10px 30px var(--fq-shadow);
+  padding: 1.25rem 24px 2rem;
+}
+
+// Dark themes: the @quartz-themes/core stylesheet recolours quotes, callouts, tables,
+// code etc. with light-on-dark colours. Force everything inside the paper card back to ink.
+html[saved-theme="dark"] .page > #quartz-body > .center {
+  article,
+  article :is(p, li, td, th, dt, dd, em, strong, span, figcaption, blockquote, .callout, .callout-title-inner, .callout-content, .callout-content *) {
+    color: var(--fq-ink-soft);
+  }
+
+  article :is(h1, h2, h3, h4, h5, h6, strong, th) {
+    color: var(--fq-ink);
+  }
+
+  article :is(blockquote, .callout) {
+    background-color: color-mix(in srgb, var(--fq-ink) 6%, transparent);
+  }
+
+  article :is(.callout-title, .callout-title *) {
+    color: var(--fq-ink);
+  }
+
+  article :is(code, pre) {
+    color: var(--fq-ink);
+    background-color: color-mix(in srgb, var(--fq-ink) 8%, transparent);
+  }
 }
 
 // Settings from fq-site-settings.ts: parts of the page to hide
@@ -236,7 +319,7 @@ html[data-hide~="darkmode"] .darkmode {
   display: none !important;
 }
 
-// Sharp corners everywhere
+// Sharp corners everywhere (design choice: no rounded corners anywhere)
 *,
 *::before,
 *::after {
@@ -244,6 +327,8 @@ html[data-hide~="darkmode"] .darkmode {
 }
 
 // ---------- Header (mobile first: four distinct rows) ----------
+// Rows: 1 avatar, 2 name, 3 tagline, 4 nav links; each row uses --fq-hdr-1..4.
+// On wide screens the rows collapse into one line. Markup: fq-global/_header.html.
 .page .custom-header-container {
   @include bleed;
   position: relative;
@@ -384,6 +469,7 @@ html[data-hide~="darkmode"] .darkmode {
 }
 
 // ---------- Footer ----------
+// Markup: fq-global/_footer.html. Colours: --fq-footer-bg / --fq-footer-ink.
 footer.custom-footer {
   @include bleed;
   background: var(--fq-footer-bg);
@@ -572,6 +658,7 @@ footer.custom-footer {
 }
 
 // ---------- Search: opaque, readable card ----------
+// The search box and its results overlay (Quartz renders it; we only restyle it).
 .page .search > .search-container {
   background: rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(4px);
@@ -617,6 +704,7 @@ footer.custom-footer {
 }
 
 // ---------- Sidebar cards ----------
+// Shared look for Explorer / Graph / TOC / Backlinks: bordered, shadowed, coloured top edge.
 .page .sidebar {
   .graph,
   .toc,
@@ -840,6 +928,7 @@ footer.custom-footer {
 }
 
 // ---------- Post meta ----------
+// The date / reading-time line under the title (component: PostMeta.tsx).
 .page .post-meta {
   display: flex;
   flex-wrap: wrap;
@@ -873,6 +962,7 @@ footer.custom-footer {
 }
 
 // ---------- Folder / index listing ----------
+// Rows on folder pages (blog, microblog, ...): date + title, then small tags beneath.
 .page ul.section-ul {
   list-style: none;
   margin: 1.5rem 0 0;
@@ -1140,10 +1230,6 @@ footer.custom-footer {
   background: transparent;
 }
 
-html[saved-theme="dark"] .page > #quartz-body > .center {
-  background: var(--fq-paper);
-}
-
 @media (min-width: 801px) {
   .page .sidebar .explorer .explorer-content,
   .page .sidebar .explorer .explorer-ul {
@@ -1156,6 +1242,7 @@ html[saved-theme="dark"] .page > #quartz-body > .center {
 }
 
 // ---------- Settings page ----------
+// Styles for /settings (content/settings.md + fq-site-client.ts): theme pickers etc.
 #fq-settings {
   h2 {
     margin-top: 2rem !important;
@@ -1345,4 +1432,88 @@ html[data-site-theme="grunge"] {
   content: "#";
   color: inherit;
   opacity: 0.7;
+}
+
+// ---------- External link icon ----------
+// Quartz already puts a small icon (svg.external-icon) after Markdown links to other
+// sites, e.g. [IMDb](https://imdb.com). Here we make it subtle, and add the same icon
+// to raw HTML links (<a href="https://...">), which Quartz does not mark.
+// Opt out for one link by writing it as HTML with the class no-icon:
+//   <a class="no-icon" href="https://example.com">text</a>
+// External links also open in a new tab (see fq-site-client.ts).
+.page article a .external-icon {
+  width: 0.7em;
+  height: 0.7em;
+  margin: 0 0 0 0.25em;
+  opacity: 0.7;
+  fill: currentColor;
+}
+
+.page article a.no-icon .external-icon {
+  display: none;
+}
+
+.page article a[href^="http"]:not(.external, .no-icon, .internal, .tag-link):not(:has(> img))::after {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-left: 0.25em;
+  opacity: 0.7;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'><path d='M7 17L17 7M8 7h9v9'/></svg>") center / contain no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'><path d='M7 17L17 7M8 7h9v9'/></svg>") center / contain no-repeat;
+}
+
+// ---------- Table of contents on tablet/mobile ----------
+// Quartz's base.scss hides .toc below the desktop breakpoint; keep it visible (full width).
+@media (max-width: 1199px) {
+  .page .sidebar > .toc,
+  .page .sidebar .toc {
+    display: flex !important;
+    flex-direction: column;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .page .sidebar .toc.fq-empty {
+    display: none !important;
+  }
+}
+
+// ---------- Link colours: internal vs external ----------
+// Internal links (to other pages on this site): theme's main accent (--secondary), solid underline,
+// no highlight box. External links (other websites): the second accent (--tertiary), dotted
+// underline plus the arrow icon above. Inside articles both follow the "paper" colours in dark themes.
+html .page article a.internal:not(.tag-link) {
+  background: transparent;
+  padding: 0;
+  line-height: inherit;
+  color: var(--secondary);
+  text-decoration-style: solid;
+}
+
+html .page article a.external,
+html .page article a[href^="http"]:not(.internal, .tag-link) {
+  color: var(--tertiary);
+  text-decoration-style: dotted;
+}
+
+html .page article a.internal:not(.tag-link):hover,
+html .page article a.external:hover,
+html .page article a[href^="http"]:not(.internal, .tag-link):hover {
+  color: var(--dark);
+}
+
+// ---------- Headings: every word starts with a capital ----------
+// Display only: the text in your notes is untouched (tab title, search and social cards
+// still use what you typed). capitalize never lowercases, so "AI" or "iPhone" stay as written.
+// To turn this off, delete this block.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: capitalize;
 }
