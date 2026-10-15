@@ -22,9 +22,8 @@ export function rebaseLinks(html: string, props: QuartzComponentProps): string {
 }
 
 export function settingsLinks(html: string): string {
-  return html.replace(
-    /\{\{settings-link\}\}/g,
-    () => (settings.showSettingsLink ? `<a href="./settings">Settings</a>` : ""),
+  return html.replace(/\{\{settings-link\}\}/g, () =>
+    settings.showSettingsLink ? `<a href="./settings">Settings</a>` : "",
   )
 }
 
