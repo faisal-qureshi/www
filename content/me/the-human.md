@@ -6,11 +6,9 @@ description: Faisal Qureshi on retiring early, constantly reinventing himself, e
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-15T14:54:32.608Z
+modified: 2026-10-15T15:27:28.909Z
 tags:
-  - about
   - me
-  - life
 ---
 
 > [!abstract] In one line

@@ -6,7 +6,9 @@ description: Everything you want to know about Faisal but are afraid to ask
 lang: en
 enableToc: true
 created: 2026-01-13
-modified: 2026-10-15T15:00:08.916Z
+modified: 2026-10-15T15:27:14.728Z
+tags:
+  - me
 ---
 
 Hello. I am Faisal Qureshi, an entrepreneur, engineer, software developer, mainstream TV host, social-media broadcaster, and retired from most of it.
