@@ -1,19 +1,20 @@
 ---
 publish: true
 permalink: /contact
-title: Get In Touch
+title: Drop Me A Line And Say Hello
 description: Get in touch with Faisal Qureshi
 lang: en
-enableToc: true
 created: 2026-10-13
-modified: 2026-10-14T10:12:04.997Z
+modified: 2026-10-15T15:16:40.357Z
 tags:
-  - contact
+  - me
 cssclasses:
   - custom-class
 ---
 
-Drop me a line and say hello
+![[my/faisalqureshi-com-contact-1792077307203.webp|700x391]]
+
+## Let's Get In Touch
 
 - by sending an email to faisalqureshi@gmail.com
 - <a href="https://instagram.com/faisalqureshi" >Instagram</a>
