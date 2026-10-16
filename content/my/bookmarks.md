@@ -5,7 +5,7 @@ title: 🔖 Bookmarks
 lang: en
 enableToc: true
 created: 2026-10-15T08:42:53Z
-modified: 2026-10-15T15:23:51.598Z
+modified: 2026-10-16T09:40:29.695Z
 tags:
   - me
 ---
@@ -17,14 +17,3 @@ When websites served as personal home pages and blogs recorded daily life, the b
 ## Online Services
 
 [Transcribe audio from video URL](https://convertaudiototext.com/)
-
-## Islam
-
-[quran.com](https://www.quran.com)
-
-## Dharma / Hinduism
-
-[Dharma Over Ground](https://www.dharmaoverground.org/)
-[Vedas](https://vedabase.io/en/)
-[Bhagavad Gita](https://vedabase.io/en/library/bg/)
-[Bhagavad Gita by Swami Mukundananda](https://www.youtube.com/@bhagavadgita4life)

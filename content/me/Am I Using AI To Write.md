@@ -5,7 +5,7 @@ title: Am I Using AI To Write
 lang: en
 enableToc: true
 created: 2026-10-15T15:28:21Z
-modified: 2026-10-15T15:34:22.710Z
+modified: 2026-10-15T16:34:46.965Z
 tags:
   - me
   - blog
@@ -25,4 +25,4 @@ No matter how hard the anti-vaxers and anti-technology folks try— these things
 
 I have no interest in falling behind.
 
-So stop worrying about how I wrote it. Try to focus onwhat I'm saying.
+So stop worrying about how I wrote it. Try to focus on what I'm saying.
