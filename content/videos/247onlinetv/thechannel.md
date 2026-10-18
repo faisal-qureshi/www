@@ -7,7 +7,7 @@ comments: true
 lang: en
 enableToc: true
 created: 2026-10-14T04:04:22Z
-modified: 2026-10-18T11:14:12.388Z
+modified: 2026-10-18T11:26:13.851Z
 tags:
   - videos
   - 247onlineTv
@@ -26,6 +26,6 @@ Turned out I was way ahead of my time. The revolution did happen - but much late
 
 I eventually lost #interest in running the channel, since this is long before you could monetize YouTube videos.
 
-The channel still exists, and can be watched on <a href="[https://](https://www.youtube.com/@247onlinetv4)" >YouTube</a>
+The channel still exists, and can be watched at [YouTube](https://www.youtube.com/@247onlinetv4)
 
 #247onlineTv
