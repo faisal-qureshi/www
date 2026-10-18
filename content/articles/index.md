@@ -6,10 +6,12 @@ description: Essays and stories by Faisal Qureshi on media, tech, relationships,
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-18T11:17:55.644Z
+modified: 2026-10-18T11:22:03.203Z
 ---
 
-<video autoplay loop muted src="./faisal-qureshi-articles-blog.mp4" style="width:100%; height:100%; object-fit:cover;"></video>
+![[articles/faisal-qureshi-articles-blog.mp4]]
+
+<video autoplay loop muted src="faisal-qureshi-articles-blog.mp4" style="width:100%; height:100%; object-fit:cover;"></video>
 
 Welcome to my articles section! Here, you’ll discover my biased and opinionated writings on a wide range of topics. Expect to read about love, relationships, success, personal development, faith, religion, and much more. Essentially, life in general.
 
