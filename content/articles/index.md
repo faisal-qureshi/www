@@ -6,10 +6,8 @@ description: Essays and stories by Faisal Qureshi on media, tech, relationships,
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-18T11:22:03.203Z
+modified: 2026-10-18T11:25:04.998Z
 ---
-
-![[articles/faisal-qureshi-articles-blog.mp4]]
 
 <video autoplay loop muted src="faisal-qureshi-articles-blog.mp4" style="width:100%; height:100%; object-fit:cover;"></video>
 
