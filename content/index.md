@@ -9,7 +9,7 @@ description: Faisal Qureshi is a Pakistani journalist, TV host and tech entrepre
 lang: en
 enableToc: true
 created: 2026-10-13
-modified: 2026-10-15T10:48:28.595Z
+modified: 2026-10-18T10:40:48.206Z
 tags:
   - fq/about-me
   - fq/information
@@ -29,10 +29,15 @@ socialImage: faisalqureshi.webp
     <div class="title">My</div>
     <div class="sub">Personal</div>
   </a>
+  <a href="articles" class="card brown">
+    <div class="icon">📇</div>
+    <div class="title">Articles</div>
+    <div class="sub">Writing</div>
+  </a>
   <a href="blog" class="card burgundy">
     <div class="icon">✍️</div>
     <div class="title">Blog</div>
-    <div class="sub">Writing</div>
+    <div class="sub">My Life</div>
   </a>
   <a href="microblog" class="card purple">
     <div class="icon">💬</div>
@@ -43,10 +48,5 @@ socialImage: faisalqureshi.webp
     <div class="icon">🎥</div>
     <div class="title">Videos</div>
     <div class="sub">Watch</div>
-  </a>
-  <a href="my/contact" class="card brown">
-    <div class="icon">✉️</div>
-    <div class="title">Contact</div>
-    <div class="sub">Reach out</div>
   </a>
 </div>
