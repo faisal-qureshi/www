@@ -7,9 +7,11 @@ comments: true
 lang: en
 enableToc: true
 created: 2025-06-08 03:32:19
-modified: 2026-10-19T10:07:58.591Z
+modified: 2026-10-19T10:16:27.896Z
 tags:
   - buddhism
+  - mindfulness
+  - conscious-living
 ---
 
 # Exploring Buddhism - From Siddhartha to Today
