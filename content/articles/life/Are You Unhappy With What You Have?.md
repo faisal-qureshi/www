@@ -1,12 +1,18 @@
 ---
 publish: true
 permalink: /articles/life/Are You Unhappy With What You Have?.md
-title: While we are hoping to live someone else’s life, someone else is wishing and praying to be able to live our life.
+title: Are You Unhappy With What You Have?
+description: While we are hoping to live someone else’s life, someone else is wishing and praying to be able to live our life.
 comments: true
 lang: en
 enableToc: true
 created: 2025-06-13 08:58:28
-modified: 2026-10-19T03:39:24.806Z
+modified: 2026-10-19T03:48:53.059Z
+tags:
+  - quran
+  - islam
+  - bible
+  - gratitude
 ---
 
 # Someone Else Is Wishing for What You Don’t Want
@@ -38,7 +44,7 @@ At that moment, stop, and say a silent grace. Say thank you to God for your bles
 
 Picture this: a man sits in traffic, frustrated he's late for a meeting. Just a few feet away, a homeless woman watches the same cars, praying for a job—any job—to be late for. One is burdened by what he has. The other is dreaming of that very burden.
 
-👉 [[#gratitude|Click here to read other articles about Gratitude.]]
+👉 [[tags/gratitude|Click here to read other articles about Gratitude.]]
 
 ---
 
