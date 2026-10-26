@@ -6,8 +6,8 @@ description: Faisal Qureshi - Social Media - Links
 comments: true
 lang: en
 enableToc: true
-created: 2025-10-26T02:05:47Z
-modified: 2026-10-26T02:44:57.074Z
+created: 2025-10-24T02:05:47Z
+modified: 2026-10-26T03:38:04.696Z
 tags:
   - fq/about-me
   - fq/information
