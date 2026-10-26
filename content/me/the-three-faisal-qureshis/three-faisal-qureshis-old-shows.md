@@ -6,10 +6,10 @@ comments: true
 lang: en
 enableToc: true
 created: 2023-05-15
-modified: 2026-10-26T03:46:11.574Z
+modified: 2026-10-26T04:12:13.059Z
 tags:
-  - "#media"
-  - "#fq/about-me"
+  - media
+  - fq/about-me
 ---
 
 ![[me/the-three-faisal-qureshis/The Three Faisal Qureshis of Pakistani Media-faisalqureshi-com.webp|700x393]]
@@ -18,7 +18,7 @@ Pakistan's media is filled with stars, but have you ever noticed how many share 
 
 It might be hard to believe, but there are at least **three Faisal Qureshis in Pakistani media**. And people often confuse one with the other.
 
-You can read more about that [[The Three Faisal Qureshis|here]]
+You can read more about that [[me/the-three-faisal-qureshis/index|here]]
 
 Though most of our shows together are lost in time, but here are a few old clips:
 
