@@ -6,7 +6,7 @@ comments: true
 lang: en
 enableToc: true
 created: 2024-10-26T07:58:37Z
-modified: 2026-10-26T09:00:21.138Z
+modified: 2026-10-26T08:20:47.662Z
 tags:
   - karma
   - buddhism

@@ -5,7 +5,7 @@ title: Why I Speak the Raw Truth on My Vlogs (And Never Say Sorry)
 lang: en
 enableToc: true
 created: 2026-10-14T09:59:44Z
-modified: 2026-10-26T09:46:48.734Z
+modified: 2026-10-26T09:44:50.589Z
 tags:
   - "#blog"
   - "#vlogging"

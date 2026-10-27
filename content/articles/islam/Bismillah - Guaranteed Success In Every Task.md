@@ -7,7 +7,7 @@ comments: true
 lang: en
 enableToc: true
 created: 2026-10-25T04:34:08Z
-modified: 2026-10-26T07:07:29.689Z
+modified: 2026-10-26T04:36:09.752Z
 tags:
   - quran
   - islam
